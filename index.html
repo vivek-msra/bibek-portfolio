@@ -621,30 +621,6 @@
             margin-bottom: 1rem;
         }
 
-        .skills-gained {
-            margin-top: 1rem;
-        }
-
-        .skills-gained h5 {
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .skills-gained ul {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .skills-gained li {
-            background: var(--bg-card-hover);
-            padding: 0.3rem 1rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            border: 1px solid var(--border-color);
-        }
-
         /* ===== PROJECTS SECTION ===== */
         .projects {
             padding: 6rem 0;
@@ -709,12 +685,6 @@
             margin-bottom: 0.5rem;
         }
 
-        .project-date {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
         .project-description {
             color: var(--text-secondary);
             margin-bottom: 1rem;
@@ -734,28 +704,6 @@
             border-radius: 50px;
             font-size: 0.8rem;
             border: 1px solid var(--border-color);
-        }
-
-        .project-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .project-btn {
-            padding: 0.8rem 1.5rem;
-            font-size: 0.9rem;
-            background: var(--bg-card-hover);
-            border: 1px solid var(--border-color);
-            color: var(--text-secondary);
-            text-decoration: none;
-            border-radius: 50px;
-            transition: var(--transition);
-        }
-
-        .project-btn:hover {
-            background: var(--gradient-1);
-            color: var(--text-primary);
-            border-color: transparent;
         }
 
         /* ===== CERTIFICATES SECTION ===== */
@@ -801,12 +749,6 @@
 
         .certificate-info h3 {
             color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .certificate-date {
-            color: var(--text-muted);
-            font-size: 0.9rem;
             margin-bottom: 0.5rem;
         }
 
@@ -863,119 +805,204 @@
             color: var(--text-secondary);
         }
 
-        /* ===== CONTACT SECTION ===== */
+        /* ===== CONTACT SECTION IMPROVEMENTS ===== */
         .contact {
             padding: 6rem 0;
             background: linear-gradient(135deg, rgba(0, 229, 255, 0.02), transparent);
         }
 
-        .contact-container {
+        .contact-container-custom {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 3rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: stretch;
         }
 
-        .contact-info {
+        .contact-left {
             display: flex;
             flex-direction: column;
-            gap: 2rem;
+            gap: 1.5rem;
+            height: 100%;
         }
 
-        .contact-item {
+        .contact-card {
+            flex: 1;
             display: flex;
             gap: 1.5rem;
             align-items: center;
-            padding: 1.5rem;
+            padding: 2rem;
             background: var(--bg-card);
             border-radius: 24px;
             border: 1px solid var(--border-color);
             transition: var(--transition);
+            min-height: 140px;
         }
 
-        .contact-item:hover {
+        .contact-card:hover {
             border-color: var(--primary);
             transform: translateY(-5px);
             box-shadow: var(--shadow-md);
         }
 
-        .contact-icon {
-            width: 60px;
-            height: 60px;
+        .contact-icon-large {
+            width: 70px;
+            height: 70px;
+            min-width: 70px;
             border-radius: 50%;
             background: var(--gradient-1);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: var(--text-primary);
         }
 
-        .contact-text h3 {
+        .contact-card h3 {
             color: var(--primary);
             margin-bottom: 0.3rem;
+            font-size: 1.3rem;
         }
 
-        .contact-text p,
-        .contact-text a {
+        .contact-card .contact-value {
             color: var(--text-secondary);
-            text-decoration: none;
-            transition: var(--transition);
+            font-size: 1.2rem;
+            font-weight: 500;
         }
 
-        .contact-text a:hover {
+        .contact-card .contact-note {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .contact-card .contact-link {
             color: var(--primary);
+            text-decoration: none;
+            font-size: 0.9rem;
         }
 
-        .contact-form {
+        /* Right side card */
+        .opportunity-card {
             background: var(--bg-card);
-            padding: 2rem;
+            padding: 2.5rem;
             border-radius: 24px;
             border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 500px;
         }
 
-        .form-group {
-            margin-bottom: 1.5rem;
+        .opportunity-header {
+            text-align: center;
+            margin-bottom: 2rem;
         }
 
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
+        .opportunity-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: var(--gradient-1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .opportunity-header h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
             padding: 1rem;
             background: var(--bg-card-hover);
-            border: 1px solid var(--border-color);
             border-radius: 12px;
-            color: var(--text-primary);
-            font-family: inherit;
             transition: var(--transition);
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.1);
+        .info-row:hover {
+            border-left: 3px solid var(--primary);
+            transform: translateX(5px);
         }
 
-        .form-group textarea {
-            min-height: 120px;
-            resize: vertical;
+        .info-row i {
+            color: var(--primary);
+            font-size: 1.3rem;
+            width: 24px;
         }
 
-        .submit-btn {
-            width: 100%;
-            padding: 1rem;
-            background: var(--gradient-1);
+        .info-row h4 {
             color: var(--text-primary);
-            border: none;
-            border-radius: 12px;
             font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .info-row p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .stats-box {
+            background: linear-gradient(135deg, rgba(0, 229, 255, 0.1), transparent);
+            padding: 1.5rem;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px dashed var(--border-hover);
+            margin: 0.5rem 0;
+        }
+
+        .stats-box p {
+            color: var(--text-secondary);
+            font-style: italic;
+            font-size: 1rem;
+        }
+
+        .tech-tags {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .tech-tags span {
+            background: var(--bg-card-hover);
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .copy-btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
             cursor: pointer;
             transition: var(--transition);
+            font-size: 1rem;
+            width: fit-content;
+            margin: 1.5rem auto 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px var(--primary-glow);
+        .copy-btn:hover {
+            background: var(--gradient-1);
+            color: white;
+            border-color: transparent;
         }
 
         /* ===== FOOTER ===== */
@@ -1016,13 +1043,8 @@
             margin-bottom: 0.5rem;
         }
 
-        .footer-contact a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .footer-contact a:hover {
+        .footer-contact i {
+            margin-right: 0.5rem;
             color: var(--primary);
         }
 
@@ -1147,8 +1169,28 @@
                 left: 60px !important;
             }
 
-            .contact-container {
+            .contact-container-custom {
                 grid-template-columns: 1fr;
+            }
+            
+            .opportunity-card {
+                min-height: auto;
+            }
+            
+            .contact-card {
+                padding: 1.5rem;
+                min-height: auto;
+            }
+            
+            .contact-icon-large {
+                width: 60px;
+                height: 60px;
+                min-width: 60px;
+                font-size: 1.5rem;
+            }
+            
+            .contact-card .contact-value {
+                font-size: 1rem;
             }
         }
 
@@ -1176,6 +1218,30 @@
 
             .projects-container {
                 grid-template-columns: 1fr;
+            }
+            
+            .contact-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem 1rem;
+            }
+            
+            .opportunity-card {
+                padding: 1.5rem;
+            }
+            
+            .opportunity-header h3 {
+                font-size: 1.5rem;
+            }
+            
+            .info-row {
+                flex-direction: column;
+                text-align: center;
+                padding: 1rem 0.5rem;
+            }
+            
+            .info-row i {
+                margin-bottom: 0.3rem;
             }
         }
     </style>
@@ -1221,7 +1287,6 @@
             </div>
             <div class="hero-image">
                 <div class="photo-frame">
-                    <!-- Place your photo here: assets/images/profile.jpg -->
                     <img src="assets/images/profile.jpg" alt="Bibek Mishra" onerror="this.style.display='none'; this.parentElement.style.background='var(--gradient-1)'; this.parentElement.innerHTML='<div style=\'width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:4rem;color:white;\'>BM</div>'">
                 </div>
             </div>
@@ -1525,158 +1590,154 @@
             </div>
         </div>
     </section>
- 
 
-<!-- Contact Section -->
-<section id="contact" class="contact">
-    <div class="container">
-        <div class="section-header">
-            <h2>Get In Touch</h2>
-            <div class="underline"></div>
-        </div>
-        
-        <div class="contact-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 1200px; margin: 0 auto; align-items: stretch;">
-            
-            <!-- LEFT SIDE: Contact Cards (Phone, Email, LinkedIn) -->
-            <div style="display: flex; flex-direction: column; gap: 1.5rem; height: 100%;">
-                <!-- Phone Card -->
-                <div style="flex: 1; display: flex; gap: 1.5rem; align-items: center; padding: 2rem; background: var(--bg-card); border-radius: 24px; border: 1px solid var(--border-color); transition: var(--transition); min-height: 140px;">
-                    <div style="width: 70px; height: 70px; min-width: 70px; border-radius: 50%; background: var(--gradient-1); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: var(--text-primary);">
-                        <i class="fas fa-phone-alt"></i>
-                    </div>
-                    <div>
-                        <h3 style="color: var(--primary); margin-bottom: 0.3rem; font-size: 1.3rem;">Call Me</h3>
-                        <p style="color: var(--text-secondary); font-size: 1.2rem; font-weight: 500;">+91 8881071077</p>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">Available Mon-Fri, 9am-6pm IST</p>
-                    </div>
-                </div>
-
-                <!-- Email Card -->
-                <div style="flex: 1; display: flex; gap: 1.5rem; align-items: center; padding: 2rem; background: var(--bg-card); border-radius: 24px; border: 1px solid var(--border-color); transition: var(--transition); min-height: 140px;">
-                    <div style="width: 70px; height: 70px; min-width: 70px; border-radius: 50%; background: var(--gradient-1); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: var(--text-primary);">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div>
-                        <h3 style="color: var(--primary); margin-bottom: 0.3rem; font-size: 1.3rem;">Email Me</h3>
-                        <p style="color: var(--text-secondary); font-size: 1.2rem; font-weight: 500;">bm.bibekmishra@gmail.com</p>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">I reply within 24 hours</p>
-                    </div>
-                </div>
-
-                <!-- LinkedIn Card -->
-                <div style="flex: 1; display: flex; gap: 1.5rem; align-items: center; padding: 2rem; background: var(--bg-card); border-radius: 24px; border: 1px solid var(--border-color); transition: var(--transition); min-height: 140px;">
-                    <div style="width: 70px; height: 70px; min-width: 70px; border-radius: 50%; background: var(--gradient-1); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: var(--text-primary);">
-                        <i class="fab fa-linkedin"></i>
-                    </div>
-                    <div>
-                        <h3 style="color: var(--primary); margin-bottom: 0.3rem; font-size: 1.3rem;">LinkedIn</h3>
-                        <p style="color: var(--text-secondary); font-size: 1.1rem;">linkedin.com/in/bibekmishra</p>
-                        <a href="https://www.linkedin.com/in/bibek-mishra-6bb79314a/" style="color: var(--primary); text-decoration: none; font-size: 0.9rem;">Connect with me →</a>
-                    </div>
-                </div>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <div class="underline"></div>
             </div>
-
-            <!-- RIGHT SIDE: Professional Card (Opportunities) -->
-            <div style="background: var(--bg-card); padding: 2.5rem; border-radius: 24px; border: 1px solid var(--border-color); display: flex; flex-direction: column; justify-content: space-between; min-height: 500px;">
+            
+            <div class="contact-container-custom">
                 
-                <!-- Top Section -->
-                <div style="text-align: center; margin-bottom: 2rem;">
-                    <div style="width: 100px; height: 100px; border-radius: 50%; background: var(--gradient-1); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2.5rem; color: white;">
-                        <i class="fas fa-bullseye"></i>
+                <!-- LEFT SIDE: Contact Cards -->
+                <div class="contact-left">
+                    <!-- Phone Card -->
+                    <div class="contact-card">
+                        <div class="contact-icon-large">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Call Me</h3>
+                            <p class="contact-value">+91 8881071077</p>
+                            <p class="contact-note">Available Mon-Fri, 9am-6pm IST</p>
+                        </div>
                     </div>
-                    <h3 style="color: var(--primary); font-size: 1.8rem; margin-bottom: 0.5rem;">Open to Opportunities</h3>
-                    <div style="width: 60px; height: 3px; background: var(--gradient-1); margin: 1rem auto;"></div>
-                </div>
 
-                <!-- Location Row -->
-                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem; padding: 1rem; background: var(--bg-card-hover); border-radius: 12px;">
-                    <i class="fas fa-map-marker-alt" style="color: var(--primary); font-size: 1.3rem; width: 24px;"></i>
-                    <div>
-                        <h4 style="color: var(--text-primary); font-weight: 600; font-size: 1rem; margin-bottom: 0.2rem;">Location Preference</h4>
-                        <p style="color: var(--text-secondary); font-size: 0.95rem;">📍 PAN India · Remote · Hybrid · WFO</p>
+                    <!-- Email Card -->
+                    <div class="contact-card">
+                        <div class="contact-icon-large">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email Me</h3>
+                            <p class="contact-value">bm.bibekmishra@gmail.com</p>
+                            <p class="contact-note">I reply within 24 hours</p>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Role Row -->
-                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem; padding: 1rem; background: var(--bg-card-hover); border-radius: 12px;">
-                    <i class="fas fa-briefcase" style="color: var(--primary); font-size: 1.3rem; width: 24px;"></i>
-                    <div>
-                        <h4 style="color: var(--text-primary); font-weight: 600; font-size: 1rem; margin-bottom: 0.2rem;">Role Preferences</h4>
-                        <p style="color: var(--text-secondary); font-size: 0.95rem;">Senior DevOps · SRE · Cloud Platform Engineer</p>
-                    </div>
-                </div>
-
-                <!-- Availability Row -->
-                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; padding: 1rem; background: var(--bg-card-hover); border-radius: 12px;">
-                    <i class="fas fa-clock" style="color: var(--primary); font-size: 1.3rem; width: 24px;"></i>
-                    <div>
-                        <h4 style="color: var(--text-primary); font-weight: 600; font-size: 1rem; margin-bottom: 0.2rem;">Availability</h4>
-                        <p style="color: var(--text-secondary); font-size: 0.95rem;">Immediate · 30 days notice</p>
-                    </div>
-                </div>
-
-                <!-- Stats Box -->
-                <div style="background: linear-gradient(135deg, rgba(0, 229, 255, 0.1), transparent); padding: 1.5rem; border-radius: 16px; text-align: center; border: 1px dashed var(--border-hover); margin: 0.5rem 0;">
-                    <p style="color: var(--text-secondary); font-style: italic; font-size: 1rem;">"4.2 years experience · 99.99% uptime · 30% faster deployments"</p>
-                    <div style="display: flex; justify-content: center; gap: 0.8rem; margin-top: 1rem; flex-wrap: wrap;">
-                        <span style="background: var(--bg-card-hover); padding: 0.4rem 1.2rem; border-radius: 50px; font-size: 0.85rem; border: 1px solid var(--border-color);">AWS</span>
-                        <span style="background: var(--bg-card-hover); padding: 0.4rem 1.2rem; border-radius: 50px; font-size: 0.85rem; border: 1px solid var(--border-color);">K8s</span>
-                        <span style="background: var(--bg-card-hover); padding: 0.4rem 1.2rem; border-radius: 50px; font-size: 0.85rem; border: 1px solid var(--border-color);">Terraform</span>
+                    <!-- LinkedIn Card -->
+                    <div class="contact-card">
+                        <div class="contact-icon-large">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div>
+                            <h3>LinkedIn</h3>
+                            <p class="contact-value">linkedin.com/in/bibekmishra</p>
+                            <a href="https://www.linkedin.com/in/bibek-mishra-6bb79314a/" class="contact-link">Connect with me →</a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Copy Button -->
-                <button onclick="navigator.clipboard.writeText('bm.bibekmishra@gmail.com'); alert('Email copied to clipboard!')" style="background: transparent; border: 1px solid var(--border-color); color: var(--text-secondary); padding: 0.8rem 2rem; border-radius: 50px; cursor: pointer; transition: var(--transition); font-size: 1rem; width: fit-content; margin: 1.5rem auto 0; display: flex; align-items: center; gap: 0.5rem;">
-                    <i class="far fa-copy"></i> Copy Email
-                </button>
+                <!-- RIGHT SIDE: Opportunities Card -->
+                <div class="opportunity-card">
+                    
+                    <!-- Header -->
+                    <div class="opportunity-header">
+                        <div class="opportunity-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Open to Opportunities</h3>
+                        <div style="width: 60px; height: 3px; background: var(--gradient-1); margin: 1rem auto;"></div>
+                    </div>
+
+                    <!-- Location -->
+                    <div class="info-row">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location Preference</h4>
+                            <p>📍 PAN India · Remote · Hybrid · WFO</p>
+                        </div>
+                    </div>
+
+                    <!-- Role -->
+                    <div class="info-row">
+                        <i class="fas fa-briefcase"></i>
+                        <div>
+                            <h4>Role Preferences</h4>
+                            <p>Senior DevOps · SRE · Cloud Platform Engineer</p>
+                        </div>
+                    </div>
+
+                    <!-- Availability -->
+                    <div class="info-row">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Availability</h4>
+                            <p>Immediate · 30 days notice</p>
+                        </div>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="stats-box">
+                        <p>"4.2 years experience · 99.99% uptime · 30% faster deployments"</p>
+                        <div class="tech-tags">
+                            <span>AWS</span>
+                            <span>K8s</span>
+                            <span>Terraform</span>
+                        </div>
+                    </div>
+
+                    <!-- Copy Button -->
+                    <button class="copy-btn" onclick="navigator.clipboard.writeText('bm.bibekmishra@gmail.com'); alert('Email copied to clipboard!')">
+                        <i class="far fa-copy"></i> Copy Email
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-
-
-<!-- Footer -->
-<footer class="footer">
-    <div class="container">
-        <div class="footer-content" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
-            
-            <!-- Left: Name & Title -->
-            <div>
-                <div class="footer-logo">
-                    <h2 style="font-size: 1.8rem; margin-bottom: 1rem; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Bibek Mishra</h2>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                
+                <!-- Left: Name & Title -->
+                <div>
+                    <div class="footer-logo">
+                        <h2>Bibek Mishra</h2>
+                    </div>
+                    <div class="footer-description">
+                        <p>Senior DevOps Engineer · 4.2 years · AWS · Kubernetes · CI/CD</p>
+                    </div>
                 </div>
-                <div class="footer-description">
-                    <p style="color: var(--text-secondary); line-height: 1.6;">Senior DevOps Engineer · 4.2 years · AWS · Kubernetes · CI/CD</p>
+
+                <!-- Middle: Contact Details -->
+                <div>
+                    <h3>Reach Me</h3>
+                    <p><i class="fas fa-phone"></i> +91 8881071077</p>
+                    <p><i class="fas fa-envelope"></i> bm.bibekmishra@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> PAN India · Remote · Hybrid · WFO</p>
+                </div>
+
+                <!-- Right: Social Links -->
+                <div>
+                    <h3>Connect</h3>
+                    <div class="social-icons" style="margin-top: 0;">
+                        <a href="https://www.linkedin.com/in/bibek-mishra-6bb79314a/"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="mailto:bm.bibekmishra@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Middle: Contact Details -->
-            <div>
-                <h3 style="color: var(--primary); margin-bottom: 1rem;">Reach Me</h3>
-                <p style="color: var(--text-secondary); margin-bottom: 0.5rem;"><i class="fas fa-phone" style="margin-right: 0.5rem; color: var(--primary);"></i> +91 8881071077</p>
-                <p style="color: var(--text-secondary); margin-bottom: 0.5rem;"><i class="fas fa-envelope" style="margin-right: 0.5rem; color: var(--primary);"></i> bm.bibekmishra@gmail.com</p>
-                <p style="color: var(--text-secondary);"><i class="fas fa-map-marker-alt" style="margin-right: 0.5rem; color: var(--primary);"></i> PAN India · Remote · Hybrid · WFO</p>
-            </div>
-
-            <!-- Right: Social Links -->
-            <div>
-                <h3 style="color: var(--primary); margin-bottom: 1rem;">Connect</h3>
-                <div style="display: flex; gap: 1.5rem;">
-                    <a href="https://www.linkedin.com/in/bibek-mishra-6bb79314a/" style="width: 40px; height: 40px; border-radius: 50%; background: var(--bg-card); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.2rem; transition: var(--transition); border: 1px solid var(--border-color); text-decoration: none;"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" style="width: 40px; height: 40px; border-radius: 50%; background: var(--bg-card); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.2rem; transition: var(--transition); border: 1px solid var(--border-color); text-decoration: none;"><i class="fab fa-github"></i></a>
-                    <a href="mailto:bm.bibekmishra@gmail.com" style="width: 40px; height: 40px; border-radius: 50%; background: var(--bg-card); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.2rem; transition: var(--transition); border: 1px solid var(--border-color); text-decoration: none;"><i class="fas fa-envelope"></i></a>
-                </div>
+            <!-- Bottom Copyright -->
+            <div class="footer-bottom">
+                <p>© 2026 Bibek Mishra · Senior DevOps Engineer · Open for opportunities PAN India</p>
             </div>
         </div>
-
-        <!-- Bottom Copyright -->
-        <div style="text-align: center; padding-top: 2rem; border-top: 1px solid var(--border-color); color: var(--text-muted);">
-            <p>© 2026 Bibek Mishra · Senior DevOps Engineer · Open for opportunities PAN India</p>
-        </div>
-    </div>
-</footer>
-
+    </footer>
 
     <!-- Scroll to Top Button -->
     <button id="scrollToTop" class="scroll-to-top">
@@ -1717,7 +1778,6 @@
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
                     
-                    // Close mobile menu if open
                     navLinks.classList.remove('open');
                     hamburger.classList.remove('active');
                     
@@ -1736,14 +1796,12 @@
             const scrollToTopBtn = document.getElementById('scrollToTop');
             
             window.onscroll = function() {
-                // Sticky navigation
                 if (window.pageYOffset > 50) {
                     navbar.classList.add('sticky');
                 } else {
                     navbar.classList.remove('sticky');
                 }
                 
-                // Show/hide scroll to top button
                 if (window.pageYOffset > 300) {
                     scrollToTopBtn.style.opacity = '1';
                     scrollToTopBtn.style.visibility = 'visible';
@@ -1753,7 +1811,6 @@
                 }
             };
             
-            // Scroll to top button functionality
             scrollToTopBtn.addEventListener('click', function(e) {
                 e.preventDefault();
                 window.scrollTo({
@@ -1785,16 +1842,6 @@
                     }
                 });
             });
-            
-            // Form submission
-            const contactForm = document.getElementById('contactForm');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    alert('Message sent successfully!');
-                    this.reset();
-                });
-            }
         });
     </script>
 </body>
