@@ -1,148 +1,529 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Bibek Mishra | DevOps Engineer</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bibek Mishra · Senior DevOps Engineer</title>
+  <style>
+    /* ===== RESET & BASE ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #0f172a;
-            color: #f1f5f9;
-            line-height: 1.6;
-        }
+    body {
+      background-color: #0B0F14;  /* deep dark background – modern devops dark */
+      color: #E8EDF2;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
 
-        .container {
-            width: 90%;
-            max-width: 1000px;
-            margin: auto;
-            padding: 40px 0;
-        }
+    /* ===== TYPOGRAPHY & ACCENT ===== */
+    h1, h2, h3 {
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
 
-        h1, h2 {
-            margin-bottom: 10px;
-        }
+    h1 {
+      font-size: clamp(2.2rem, 8vw, 3.5rem);
+      font-weight: 600;
+      line-height: 1.1;
+      color: #ffffff;
+    }
 
-        h1 {
-            font-size: 42px;
-        }
+    h2 {
+      font-size: 1.9rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid rgba(0, 255, 255, 0.15);
+      padding-bottom: 0.5rem;
+      display: inline-block;
+      color: #ffffff;
+    }
 
-        h2 {
-            border-bottom: 2px solid #2563eb;
-            padding-bottom: 5px;
-            margin-top: 40px;
-        }
+    h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #00C8FF;   /* cyan accent */
+      margin-top: 6px;
+      border-radius: 2px;
+    }
 
-        p {
-            color: #cbd5e1;
-        }
+    a {
+      text-decoration: none;
+      color: #E8EDF2;
+      transition: color 0.2s ease, border-color 0.2s;
+    }
 
-        .highlight {
-            color: #3b82f6;
-        }
+    .accent {
+      color: #00C8FF;
+    }
 
-        .skills span {
-            display: inline-block;
-            background: #1e293b;
-            padding: 8px 12px;
-            margin: 5px;
-            border-radius: 6px;
-            font-size: 14px;
-        }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
 
-        .project {
-            background: #1e293b;
-            padding: 20px;
-            margin: 15px 0;
-            border-radius: 8px;
-        }
+    /* ===== BUTTONS / CONTACT LINKS ===== */
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 2rem 0 1rem;
+    }
 
-        .button {
-            display: inline-block;
-            padding: 10px 18px;
-            margin-top: 15px;
-            background: #2563eb;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-        }
+    .btn {
+      background: transparent;
+      border: 1.5px solid #2A3745;
+      padding: 0.75rem 1.8rem;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 1rem;
+      color: #E8EDF2;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
 
-        .button:hover {
-            background: #1d4ed8;
-        }
+    .btn i { font-style: normal; font-weight: 400; } /* placeholder for icons */
 
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            font-size: 14px;
-            color: #94a3b8;
-        }
+    .btn:hover {
+      border-color: #00C8FF;
+      background: rgba(0, 200, 255, 0.05);
+      color: #ffffff;
+    }
 
-        a {
-            color: #3b82f6;
-            text-decoration: none;
-        }
+    /* ===== HERO SECTION ===== */
+    .hero {
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+    }
 
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero .tagline {
+      font-size: 1.3rem;
+      color: #B0C5D4;
+      margin: 1rem 0 1.5rem;
+      border-left: 3px solid #00C8FF;
+      padding-left: 1.5rem;
+    }
+
+    .hero-meta {
+      color: #8CA3B9;
+      font-size: 1.05rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem 2rem;
+    }
+
+    /* ===== CARDS & SKILLS ===== */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .skill-category {
+      background: #131A24;
+      border-radius: 20px;
+      padding: 1.8rem 1.5rem;
+      border: 1px solid #25303C;
+      transition: border 0.2s;
+    }
+
+    .skill-category:hover {
+      border-color: #00C8FF;
+    }
+
+    .skill-category h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1.2rem;
+      color: #ffffff;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .skill-category h3 span {
+      color: #00C8FF;
+      font-size: 1.6rem;
+    }
+
+    .skill-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 0.9rem;
+    }
+
+    .skill-items span {
+      background: #1E2A35;
+      padding: 0.3rem 1rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      color: #CCDDEB;
+      border: 1px solid #2E3D4D;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .skill-items span:hover {
+      background: #253640;
+      border-color: #00C8FF;
+    }
+
+    /* ===== EXPERIENCE & PROJECTS ===== */
+    .timeline-item {
+      margin-bottom: 2.5rem;
+      padding: 1.8rem;
+      background: #131A24;
+      border-radius: 24px;
+      border: 1px solid #25303C;
+      transition: border 0.2s, transform 0.1s;
+    }
+
+    .timeline-item:hover {
+      border-color: #00C8FF;
+    }
+
+    .item-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.75rem;
+    }
+
+    .item-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    .item-sub {
+      font-weight: 400;
+      color: #9FB3CC;
+      font-size: 1rem;
+    }
+
+    .item-date {
+      color: #00C8FF;
+      font-family: monospace;
+      font-size: 0.95rem;
+      background: #1E2A35;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+    }
+
+    .item-desc {
+      margin-top: 1rem;
+      list-style: none;
+    }
+
+    .item-desc li {
+      margin-bottom: 0.6rem;
+      display: flex;
+      gap: 0.8rem;
+    }
+
+    .item-desc li::before {
+      content: "▹";
+      color: #00C8FF;
+      font-weight: bold;
+    }
+
+    /* projects */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .project-card {
+      background: #131A24;
+      border: 1px solid #25303C;
+      border-radius: 24px;
+      padding: 1.8rem 1.5rem;
+      transition: border 0.2s;
+    }
+
+    .project-card:hover {
+      border-color: #00C8FF;
+    }
+
+    .project-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+      color: #ffffff;
+    }
+
+    .project-card p {
+      color: #B0C5D4;
+    }
+
+    /* certifications & achievements */
+    .cert-list, .achievement-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .cert-item {
+      background: #131A24;
+      border: 1px solid #25303C;
+      padding: 0.5rem 1.5rem;
+      border-radius: 40px;
+      font-size: 0.95rem;
+      color: #CCDDEB;
+    }
+
+    .cert-item.planned {
+      border: 1px dashed #3A5068;
+      color: #8CA3B9;
+    }
+
+    .achievement-item {
+      background: #131A24;
+      border: 1px solid #25303C;
+      padding: 1.2rem 2rem;
+      border-radius: 60px;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .achievement-item span {
+      font-size: 1.8rem;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      border-top: 1px solid #25303C;
+      margin-top: 3rem;
+      padding: 2rem 0 1rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      color: #6C859E;
+      font-size: 0.95rem;
+    }
+
+    .footer a {
+      color: #B0C5D4;
+    }
+
+    .footer a:hover {
+      color: #00C8FF;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 640px) {
+      .container {
+        padding: 1.5rem 1.2rem;
+      }
+      h2 {
+        font-size: 1.7rem;
+      }
+      .btn {
+        padding: 0.6rem 1.2rem;
+      }
+      .hero .tagline {
+        font-size: 1.2rem;
+      }
+      .item-header {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+
+    /* helper */
+    .section {
+      margin: 4rem 0;
+    }
+
+    hr {
+      border: 0.5px solid #25303C;
+      margin: 2rem 0;
+    }
+  </style>
 </head>
-
 <body>
+  <div class="container">
+    <!-- HERO SECTION -->
+    <section class="hero section">
+      <div class="hero-content">
+        <h1>Bibek Mishra</h1>
+        <div class="hero-meta">
+          <span>Senior DevOps Engineer</span>
+          <span>·</span>
+          <span>AWS · K8s · CI/CD</span>
+        </div>
+        <p class="tagline">4.2 years of experience designing scalable cloud-native infrastructure on AWS.</p>
+        
+        <div class="contact-links">
+          <a href="#" class="btn"><i>🔗</i> LinkedIn</a>
+          <a href="#" class="btn"><i>🐙</i> GitHub</a>
+          <a href="#" class="btn"><i>✉️</i> Email</a>
+        </div>
+      </div>
+    </section>
 
-<div class="container">
+    <!-- ABOUT SECTION -->
+    <section class="section">
+      <h2>About</h2>
+      <p style="max-width: 900px; font-size: 1.15rem; color: #D0E0F0; margin-top: 1.2rem;">
+        Senior DevOps Engineer with 4.2 years of experience in designing, automating, and managing scalable cloud infrastructures and CI/CD pipelines. Skilled in microservices architecture using AWS, Kubernetes, Terraform, and Jenkins. Experienced in container security with Kyverno and service mesh networking with Linkerd. Proven ability to reduce deployment cycles by 30% and maintain 99.99% uptime.
+      </p>
+    </section>
 
-    <h1>Hi, I'm <span class="highlight">Bibek Mishra</span></h1>
-    <p>DevOps Engineer | AWS | Kubernetes | CI/CD Automation</p>
-    <p>4+ years of experience building scalable cloud infrastructure and automating deployments.</p>
+    <!-- SKILLS SECTION (categorized) -->
+    <section class="section">
+      <h2>Technical expertise</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3><span>☁️</span> Cloud Platforms</h3>
+          <div class="skill-items">
+            <span>AWS (EC2)</span><span>S3</span><span>Lambda</span><span>RDS</span><span>EKS</span><span>VPC</span><span>Route 53</span><span>MSK</span><span>CloudFormation</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3><span>📦</span> Containers & Orchestration</h3>
+          <div class="skill-items"><span>Kubernetes</span><span>Docker</span><span>Helm</span></div>
+        </div>
+        <div class="skill-category">
+          <h3><span>🏗️</span> Infrastructure as Code</h3>
+          <div class="skill-items"><span>Terraform</span><span>Terragrunt</span></div>
+        </div>
+        <div class="skill-category">
+          <h3><span>⚙️</span> CI/CD</h3>
+          <div class="skill-items"><span>Jenkins</span><span>Atlassian Bamboo</span></div>
+        </div>
+        <div class="skill-category">
+          <h3><span>📋</span> Configuration Management</h3>
+          <div class="skill-items"><span>Ansible</span></div>
+        </div>
+        <div class="skill-category">
+          <h3><span>📊</span> Monitoring</h3>
+          <div class="skill-items"><span>Prometheus</span><span>Grafana</span><span>CloudWatch</span><span>LogicMonitor</span></div>
+        </div>
+        <div class="skill-category">
+          <h3><span>🛡️</span> Security</h3>
+          <div class="skill-items"><span>Kyverno</span><span>IAM</span><span>CloudTrail</span></div>
+        </div>
+        <div class="skill-category">
+          <h3><span>🌐</span> Service Mesh & Networking</h3>
+          <div class="skill-items"><span>Linkerd</span><span>ALB</span><span>Ingress Controller</span></div>
+        </div>
+        <div class="skill-category">
+          <h3><span>🐍</span> Programming</h3>
+          <div class="skill-items"><span>Python</span><span>Shell/Bash</span><span>Go</span></div>
+        </div>
+      </div>
+    </section>
 
-    <a href="#" class="button">Download Resume</a>
+    <!-- EXPERIENCE SECTION -->
+    <section class="section">
+      <h2>Experience</h2>
+      <div class="timeline-item">
+        <div class="item-header">
+          <span class="item-title">Publicis Sapient</span>
+          <span class="item-date">Oct 2025 – Present</span>
+        </div>
+        <div class="item-sub">Senior Infrastructure Engineer (DevOps / Cloud Platform)</div>
+        <ul class="item-desc">
+          <li>Managing AWS, EKS, Terraform infrastructure</li>
+          <li>Improving CI/CD pipelines (Jenkins)</li>
+          <li>Provisioned GPU-backed infrastructure for AI Copilot</li>
+          <li>Maintaining 99.99% uptime</li>
+          <li>Automated AWS resources with Ansible</li>
+        </ul>
+      </div>
 
-    <h2>Skills</h2>
-    <div class="skills">
-        <span>AWS (EC2, VPC, EKS, IAM, S3)</span>
-        <span>Kubernetes</span>
-        <span>Docker</span>
-        <span>Terraform</span>
-        <span>Jenkins</span>
-        <span>GitHub Actions</span>
-        <span>Linux</span>
-        <span>Prometheus</span>
-        <span>Grafana</span>
-    </div>
+      <div class="timeline-item">
+        <div class="item-header">
+          <span class="item-title">LogicMonitor</span>
+          <span class="item-date">Dec 2021 – Sep 2025</span>
+        </div>
+        <div class="item-sub">DevOps Engineer</div>
+        <ul class="item-desc">
+          <li>Deployed 100+ microservices on EKS</li>
+          <li>Architected 1000+ AWS resources using Terraform</li>
+          <li>Implemented FedRAMP in AWS GovCloud</li>
+          <li>Automated cloud workflows with Python (boto3)</li>
+          <li>Reduced vulnerabilities by 50%</li>
+        </ul>
+      </div>
+    </section>
 
-    <h2>Projects</h2>
+    <!-- PROJECTS SECTION -->
+    <section class="section">
+      <h2>Key projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <h3>AWS Infrastructure Automation</h3>
+          <p>with Terraform & Python — Automated EC2, S3, VPC, IAM provisioning. Reduced manual intervention by 80%.</p>
+        </div>
+        <div class="project-card">
+          <h3>Microservices Orchestration on EKS</h3>
+          <p>Implemented autoscaling and blue-green deployments. Reduced infra costs and improved scalability.</p>
+        </div>
+        <div class="project-card">
+          <h3>CI/CD Automation with Bamboo & Jenkins</h3>
+          <p>Reduced release cycles by 30%. Implemented reusable pipeline templates.</p>
+        </div>
+      </div>
+    </section>
 
-    <div class="project">
-        <h3>EKS Production Deployment</h3>
-        <p>Designed and deployed scalable Kubernetes infrastructure on AWS EKS with Terraform and Helm.</p>
-    </div>
+    <!-- CERTIFICATIONS + ACHIEVEMENTS (two in one row) -->
+    <section class="section">
+      <h2>Certifications & achievements</h2>
+      <div style="display: grid; gap: 2rem;">
+        <!-- certs -->
+        <div>
+          <h3 style="color: #ffffff; font-weight: 400; margin-bottom: 1.2rem;">📜 Certifications</h3>
+          <div class="cert-list">
+            <span class="cert-item">HashiCorp Terraform Associate</span>
+            <span class="cert-item">AWS AI Practitioner</span>
+            <span class="cert-item">Linux Foundation Intro to Linux</span>
+            <span class="cert-item">IBM Python 101</span>
+            <span class="cert-item planned">(Planned) AWS Solutions Architect Associate</span>
+            <span class="cert-item planned">(Planned) CKA</span>
+          </div>
+        </div>
+        <!-- achievements -->
+        <div>
+          <h3 style="color: #ffffff; font-weight: 400; margin-bottom: 1.2rem;">🏆 Achievements</h3>
+          <div class="achievement-list">
+            <div class="achievement-item"><span>🌟</span> Employee of the Month</div>
+            <div class="achievement-item"><span>⚡</span> Automation Excellence Award</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <div class="project">
-        <h3>CI/CD Automation Pipeline</h3>
-        <p>Built automated CI/CD pipelines using Jenkins and GitHub Actions for containerized applications.</p>
-    </div>
-
-    <div class="project">
-        <h3>Monitoring Stack Setup</h3>
-        <p>Implemented monitoring using Prometheus and Grafana for real-time infrastructure visibility.</p>
-    </div>
-
-    <h2>Contact</h2>
-    <p>Email: yourmail@email.com</p>
-    <p>
-        GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a><br>
-        LinkedIn: <a href="#" target="_blank">Your LinkedIn Profile</a>
-    </p>
-
-    <footer>
-        © 2026 Bibek Mishra | Built with GitHub Pages
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div>© 2026 Bibek Mishra</div>
+      <div style="display: flex; gap: 2rem;">
+        <span>Hosted on <a href="#">GitHub Pages</a></span>
+        <span>·</span>
+        <span>minimal · devops style</span>
+      </div>
     </footer>
-
-</div>
-
+  </div>
+  <!-- subtle hover line – pure css already included -->
 </body>
 </html>
+```
